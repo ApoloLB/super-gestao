@@ -3,6 +3,8 @@
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SobreNosController;
+use App\Http\Controllers\TesteController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,15 +25,11 @@ route::get('/contato/{nome}', function(string $nome){
 });
 
 
-Route::get('/rota1', function(){
-    echo 'rota1';
-})->name('site.rota1');
+Route::get('/teste/{p1}/{p2}', [TesteController::class, 'index'])->name('site.teste');
 
-Route::get('/rota2', function(){
-    return redirect()->route('site.rota1');
-})->name('site.rota2');
 
-Route::fallback(function(){
-    echo 'A rota não existe. <a href="'.route('site.index').'">Clique Aqui</a> para ir para a página inicial.';
-});
+
+// Route::fallback(function(){
+//     echo 'A rota não existe. <a href="'.route('site.index').'">Clique Aqui</a> para ir para a página inicial.';
+// });
 
