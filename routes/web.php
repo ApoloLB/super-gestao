@@ -14,6 +14,7 @@ Route::get('/', [HomeController::class, 'index'])->name('site.index');
 Route::get('/sobre-nos', [SobreNosController::class, 'index'])->name('site.sobrenos');
 
 Route::get('/contato', [ContatoController::class, 'index'])->name('site.contato');
+Route::post('/contato', [ContatoController::class, 'index'])->name('site.contato');
 
 
 Route::prefix('/app')->group(function(){
